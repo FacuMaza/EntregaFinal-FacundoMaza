@@ -1,0 +1,34 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+
+<div class="row">
+    {% for estu in object_list %}
+        <div class="card" style="width: 18rem;" >
+
+            <img src="..." class="card-img-top" alt="...">
+
+            <div class="card-body">
+
+            <h5 class="card-title">{{ estu.nombre }}</h5>
+
+            <p class="card-text">apellido: {{ estu.apellido }}</p>
+            <p class="card-text">DNI: {{ estu.dni }}</p>
+
+            <a href="{% url 'estudiantesDetalle' estu.id %}" class="btn btn-primary">Ver</a>
+
+            <a href="{% url 'estudiantesModificacion' estu.id %}" class="btn btn-primary">Editar</a>
+
+            <a href="{% url 'estudiantesDelete' estu.id %}" class="btn btn-primary">Borrar</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'estudiantesCreate' %}">Agregar nuevo</a>
+
+{% endblock contenidoQueCambia %}

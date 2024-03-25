@@ -1,0 +1,19 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+    
+{% csrf_token %}
+
+NOMBRE: {{ prof.nombre }}<br>
+APELLIDO: {{ prof.apellido }}<br>
+DNI: {{ prof.dni }}<br>
+EMAIL: {{ prof.email }}<br>
+<button type="button" class="btn btn-dark"><a href="{% url 'profesoresLista' %}">Regresar</a></button>
+
+
+
+{% endblock contenidoQueCambia %}

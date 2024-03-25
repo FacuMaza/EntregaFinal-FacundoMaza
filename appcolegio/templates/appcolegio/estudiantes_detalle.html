@@ -1,0 +1,19 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+    
+
+
+NOMBRE: {{ estu.nombre }}<br>
+APELLIDO: {{ estu.apellido }}<br>
+DNI: {{ estu.dni }}<br>
+EMAIL: {{ estu.email }}<br>
+<button type="button" class="btn btn-dark"><a href="{% url 'estudiantesLista' %}">Regresar</a></button>
+
+
+
+{% endblock contenidoQueCambia %}

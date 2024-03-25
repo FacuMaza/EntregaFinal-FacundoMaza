@@ -1,0 +1,18 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+    
+{% csrf_token %}
+
+NOMBRE: {{ mate.nombre }}<br>
+CODIGO: {{ mate.codigo }}<br>
+
+<button type="button" class="btn btn-dark"><a href="{% url 'materiasLista' %}">Regresar</a></button>
+
+
+
+{% endblock contenidoQueCambia %}

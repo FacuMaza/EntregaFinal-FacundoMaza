@@ -1,0 +1,28 @@
+{% extends 'appcolegio/padre.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block contenidoQueCambia %}
+    <div class="card mb-3 text-center" style="max-width: 700px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'appcolegio/assets/foto.jpg'%}" class="img-fluid rounded-start" alt="foto">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Facundo Maza</h5>
+              <p class="card-text">Mi nombre es Facundo Maza, tengo 32 años y vivo en Salta Capital Argentina. Soy analista de sistemas, que me enseño a trabajar con PHP y PHPMyadmin. Decidi estudiar este curso, porque me contrataron de un colegio, los cuales me preguntaron si podia realizar dicho programa en PYTHON. Hoy me encuentro viviendo con mis padres y uno de mis sueños mas grandes es, poder independizarme y que la programacion me brinde un buen pasar economico para cumplir dicho sueño.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endblock contenidoQueCambia %}
+</body>
+</html>

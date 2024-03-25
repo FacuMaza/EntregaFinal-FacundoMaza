@@ -1,0 +1,20 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+   
+
+    <input type="submit" value="Enviar">
+</form>
+
+
+{% endblock contenidoQueCambia %}

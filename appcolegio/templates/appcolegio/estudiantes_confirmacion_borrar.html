@@ -1,0 +1,21 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+    
+
+
+<form method="POST">
+    {% csrf_token %}
+    ¿Esta seguro que desea borrar? {{ object }}
+    <input type="submit" value="Borrar">
+</form>
+<button type="button" class="btn btn-dark"><a href="{% url 'estudiantesLista' %}">Regresar</a></button>
+
+
+
+
+{% endblock contenidoQueCambia %}
