@@ -8,11 +8,12 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def inicio(request):
     return render(request, "appcolegio/index.html")
-
+@login_required
 def buscarCurso(request):
     if request.method == "POST":
         miFormulario = buscarCursos(request.POST)
@@ -189,7 +190,6 @@ class materiaslista(PermissionRequiredMixin,LoginRequiredMixin,ListView):
     model = mate
     template_name = "appcolegio/materias_list.html"
     permission_required = 'appcolegio.view_mate'
-    permission_denied_message = 'Usted no esta autorizado.'
 
 class materiasdetalle(LoginRequiredMixin,DetailView):
     model = mate

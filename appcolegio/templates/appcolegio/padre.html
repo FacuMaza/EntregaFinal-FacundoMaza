@@ -12,7 +12,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static "appcolegio/css/styles.css" %}" rel="stylesheet" />
     </head>
-    <header class="bg-primary bg-gradient text-white">
+    <header class="bg-primary bg-gradient text-white ">
         <div class="container px-1 text-center">
             <h1 class="fw-bolder">Entrega Final</h1>
           
@@ -37,13 +37,24 @@
                 <ul class="navbar-nav ms-auto">
                     
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'cursoLista' %}">CURSOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'estudiantesLista' %}">ESTUDIANTES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profesoresLista' %}">PROFESORES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'materiasLista' %}">MATERIAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'buscarCurso' %}">BUSCAR</a></li>
+                   
                     
-                    
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="{% url 'cursoLista' %}">CURSOS</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'estudiantesLista' %}">ESTUDIANTES</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'profesoresLista' %}">PROFESORES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'materiasLista' %}">MATERIAS</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{% url 'buscarCurso' %}">BUSCAR</a>
+                          </li>
+                      </ul>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ request.user.username }}
